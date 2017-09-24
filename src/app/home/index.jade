@@ -1,0 +1,37 @@
+﻿h1 Welcome {{vm.user.firstName}}!!
+hr
+p
+.form-container
+  form(method='post')
+    .form-group
+      label(for='DomainOne') Domain One
+      input#DomainOne.form-control(type='text', ng-model='vm.search.obj.one', required='')
+    .form-group
+      label(for='DomainTwo') Domain Two 
+      input#DomainTwo.form-control(type='text', ng-model='vm.search.obj.two')
+    .form-group
+      label(for='DomainThree') Domain Three
+      input#DomainThree.form-control(type='text', ng-model='vm.search.obj.three')
+    .form-group
+      label(for='searchName') searchName
+      input#searchName.form-control(type='text', ng-model='vm.search.name', required='')
+    .form-group
+      button.btn.btn-primary(ng-click='vm.saveSearch()') Save Search
+hr
+h4 Saved Search:
+.container
+  .form-group
+    input.form-control(ng-model='s.$', placeholder='Search')
+  .col-sm-12
+    .row
+      .panel.panel-default(ng-repeat='s in vm.searchData  | filter:s:strict')
+        .panel-body
+          .col-sm-4
+            h4 Search Name :{{s.name}}
+          .col-sm-8
+            h4  Domains : {{s.searchArray}}
+hr
+h4 Select the search group
+.container
+  .form-group
+    select#savedSearch.form-control(name='savedSearch', ng-change='vm.executeSearch();', ng-model='vm.selectedName', ng-options='x for x in vm.arr')

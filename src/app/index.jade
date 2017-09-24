@@ -1,0 +1,37 @@
+﻿doctype html
+html
+  head
+    meta(charset='utf-8')
+    title MEAN Stack User Registration and Login Example Application
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/css?family=PT+Sans|Roboto', rel='stylesheet')
+    link(href='app-content/app.css', rel='stylesheet')
+  body.container
+    // header
+    header
+      ul.nav.navbar-default.nav-tabs
+        li(ng-class="{active: activeTab === 'home'}")
+          a(ui-sref='home') Home
+        li(ng-class="{active: activeTab === 'account'}")
+          a(ui-sref='account') Account
+        li
+          a(href='/login', target='_self') Logout
+      .flash-message(ng-if='flash')
+        .(class="{{'alert alert-' + flash.type}}", ng-bind='flash.message')
+    // main
+    main(ui-view='')
+    // footer
+    footer
+    // external scripts
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js')
+    // Latest compiled and minified CSS
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js')
+    // application scripts
+    script(src='app.js')
+    script(src='app-services/user.service.js')
+    script(src='app-services/flash.service.js')
+    script(src='home/index.controller.js')
+    script(src='account/index.controller.js')

@@ -1,0 +1,25 @@
+{
+  "name": "z1_express_coffee",
+  "version": "0.0.0",
+  "description": "NodeJS Express scafolding template using gulp and coffescript.",
+  "keywords": [
+    "gulp",
+    "express",
+    "template"
+  ],
+  "authors": [
+    "zdebeer"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0"
+  }
+}
